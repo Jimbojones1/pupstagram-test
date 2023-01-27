@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import * as postsAPI from "../../utils/postApi";
 import * as likesAPI from "../../utils/likeApi";
 
-import useAddLike from "../../hooks/useAddLike";
+
 
 import { Grid } from "semantic-ui-react";
 

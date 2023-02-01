@@ -38,6 +38,8 @@ app.use('/api/posts',postRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api', likeRoutes);
 // "catch all" route
+
+app.use(express.static(path.join(__dirname, "./dist/assets")));
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });

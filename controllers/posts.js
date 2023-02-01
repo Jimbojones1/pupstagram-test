@@ -6,7 +6,7 @@ const s3 = new S3(); // initate the S3 constructor which can talk to aws/s3 our 
 import { v4 as uuidv4 } from "uuid";
 // since we are sharing code, when you pull you don't want to have to edit the
 // the bucket name, thats why we're using an environment variable
-const BUCKET_NAME = process.env.BUCKET_NAME;
+const BUCKET_NAME = process.env.BUCKET_NAME || process.env.CYCLIC_BUCKET_NAME
 
 export default {
   create,

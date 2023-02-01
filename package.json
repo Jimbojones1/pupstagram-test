@@ -26,7 +26,6 @@
     "semantic-ui-react": "^2.1.4",
     "serve-favicon": "^2.5.0"
   },
-  "files": ["dist"],
   "devDependencies": {
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",

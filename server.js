@@ -17,8 +17,9 @@ import './config/database.js'
 // Require controllers here
 const app = express();
 
-app.set('views', path.join(__dirname, 'dist'))
+
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'dist'))
 // console.log(assetsRouter)
 // add in when the app is ready to be deployed
 // app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));

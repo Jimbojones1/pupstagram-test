@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 // since we are sharing code, when you pull you don't want to have to edit the
 // the bucket name, thats why we're using an environment variable
 const BUCKET_NAME = process.env.CYCLIC_BUCKET_NAME || process.env.BUCKET_NAME
-
+console.log(BUCKET_NAME, ' this BUCKETNAME', process.env.CYCLIC_BUCKET_NAME)
 export default {
   create,
   index,

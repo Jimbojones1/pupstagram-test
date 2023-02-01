@@ -5,7 +5,13 @@ const SECRET = process.env.SECRET;
 
 import S3 from 'aws-sdk/clients/s3.js';
 // initialize the S3 consturctor function to give us the object that can perform crud operations to aws
-const s3 = new S3();
+const s3 = new S3({
+  region: process.env.MY_REGION,
+  credentials:{
+      accessKeyId: process.env.MY_AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.MY_AWS_SECRET_ACCESS_KEY
+  }
+});
 
 // We'll use this module to help us generate random names for our photo files on aws
 import { v4 as uuidv4 } from 'uuid';

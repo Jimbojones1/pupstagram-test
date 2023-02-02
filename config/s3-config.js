@@ -3,6 +3,7 @@ import S3 from "aws-sdk/clients/s3.js";
 let config = {}
 
 if(process.env.PROD){
+	console.log('ahppeingg!')
 	config = {
 		region: process.env.MY_REGION,
 		credentials:{
@@ -11,5 +12,8 @@ if(process.env.PROD){
 		}
 	  }
 }
+
+console.log(process.env.PROD, ' prod')
+
 
 export const s3 = new S3(config); 

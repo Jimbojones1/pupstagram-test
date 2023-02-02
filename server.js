@@ -43,12 +43,12 @@ app.use('/api', likeRoutes);
 // "catch all" route
 
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "dist'")));
 
 
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 const { PORT } = process.env;

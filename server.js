@@ -43,7 +43,7 @@ app.use('/api', likeRoutes);
 // "catch all" route
 
 
-app.use(express.static(path.join(__dirname, "dist'")));
+app.use(express.static(path.join(__dirname, "dist")));
 
 
 

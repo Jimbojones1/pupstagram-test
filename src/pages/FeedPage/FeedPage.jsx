@@ -2,7 +2,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import AddPuppyForm from "../../components/AddPuppyForm/AddPuppyForm";
 import PostDisplay from "../../components/PostDisplay/PostDisplay";
 import Loader from "../../components/Loader/Loader";
-
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { useState, useEffect } from "react";
 
 // import { create } from '../../utils/postApi'
@@ -74,7 +74,7 @@ function FeedPage({loggedUser, handleLogout}) {
       setPosts(response.data);
       setLoading(false);
     } catch (err) {
-      console.log(err.message, " this is the error in getPosts");
+      console.log(err, " this is the error in getPosts");
       setLoading(false);
     }
   }

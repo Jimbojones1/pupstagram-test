@@ -1,19 +1,12 @@
 import User from "../models/user.js";
 import Post from '../models/post.js';
-import S3 from "aws-sdk/clients/s3.js";
-const s3 = new S3({
-  region: process.env.MY_REGION,
-  credentials:{
-      accessKeyId: process.env.MY_AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.MY_AWS_SECRET_ACCESS_KEY
-  }
-}); // initate the S3 constructor which can talk to aws/s3 our bucket!
+import {s3} from '../config/s3-config.js'
 // import uuid to help generate random names
 import { v4 as uuidv4 } from "uuid";
 // since we are sharing code, when you pull you don't want to have to edit the
 // the bucket name, thats why we're using an environment variable
-const BUCKET_NAME = process.env.CYCLIC_BUCKET_NAME || process.env.BUCKET_NAME
-console.log(BUCKET_NAME, ' this BUCKETNAME', process.env.CYCLIC_BUCKET_NAME)
+const BUCKET_NAME = process.env.BUCKET_NAME
+
 export default {
   create,
   index,

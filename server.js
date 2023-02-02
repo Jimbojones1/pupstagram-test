@@ -20,12 +20,12 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'dist'))
-// console.log(assetsRouter)
+
 // add in when the app is ready to be deployed
-// app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'dist', 'vite.svg')));
 app.use(logger('dev'));
 app.use(express.json()); // sets up our server to recieve JSON requests, this defines req.body for json requests
-// app.use("/src", assetsRouter);
+
 // Configure the auth middleware
 // This decodes the jwt token, and assigns
 // the user information to req.user
@@ -42,14 +42,13 @@ app.use('/api/users', userRoutes);
 app.use('/api', likeRoutes);
 // "catch all" route
 
-import manifest from './dist/manifest.json' assert {type: "json"};
 
-app.use(express.static(path.join(__dirname, "dist")));
-console.log(manifest['src/main.jsx'].file)
+app.use(express.static(path.join(__dirname, "public")));
+
 
 
 app.get('/*', function(req, res) {
-  res.render(path.join(__dirname, 'dist', 'index.ejs'), {manifest});
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 const { PORT } = process.env;

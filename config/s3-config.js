@@ -2,7 +2,7 @@ import S3 from "aws-sdk/clients/s3.js";
 
 let config = {}
 
-if(process.env.PROD){
+if(process.env.CYCLIC_APP_ID){
 	console.log('ahppeingg!')
 	config = {
 		region: process.env.MY_REGION,
@@ -13,7 +13,7 @@ if(process.env.PROD){
 	  }
 }
 
-console.log(process.env.PROD, ' prod')
+console.log(process.env.CYCLIC_APP_ID, ' prod')
 
 
 export const s3 = new S3(config); 
